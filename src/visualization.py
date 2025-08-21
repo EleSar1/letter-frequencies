@@ -13,7 +13,13 @@ def separate_chars_and_frequencies(char_freq: dict) -> tuple[list, list]:
         tuple[list, list]: A tuple containing two lists:
             - the list of characters
             - the list of frequencies
+    
+    Raises:
+        TypeError: If 'char_freq' is not a dict.
     """
+    
+    if not isinstance(char_freq, dict):
+        raise TypeError(f"'char_freq' must be a dict, got {type(char_freq).__name__}.")
     
     chars = []
     frequencies = []
